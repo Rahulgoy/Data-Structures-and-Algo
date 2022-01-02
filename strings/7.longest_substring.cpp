@@ -5,28 +5,28 @@ using namespace std;
 string longestPalin (string S) {
         // code here
         int size=S.size();
-        int  l,h;
+        int  low,high;
         int start=0,end=1;
         for(int i=0;i<size;i++){
-            l=i-1;
-            h=i;
-            while(l>=0 && h<size && S[l]==S[h]){
-                if(h-l+1>end){
-                    start=l;
-                    end=h-l+1;
+            low=i;
+            high=i;
+            while(low>=0 && high<size && S[low]==S[high]){
+                if(high-low+1>end){
+                    start=low;
+                    end=high-low+1;
                 }
-                l--;
-                h++;
+                low--;
+                high++;
             }
-            l=i-1;
-            h=i+1;
-            while(l>=0 && h<size && S[l]==S[h]){
-                if(h-l+1>end){
-                    start=l;
-                    end=h-l+1;
+            low=i;
+            high=i+1;
+            while(low>=0 && high<size && S[low]==S[high]){
+                if(high-low+1>end){
+                    start=low;
+                    end=high-low+1;
                 }
-                l--;
-                h++;
+                low--;
+                high++;
             }
         
         }
@@ -39,7 +39,7 @@ string longestPalin (string S) {
 
 int main(){
 
-    string s = "aaaabbaa";
+    string s = "asdabc";
     cout<<longestPalin(s)<<endl;
 
 return 0;
