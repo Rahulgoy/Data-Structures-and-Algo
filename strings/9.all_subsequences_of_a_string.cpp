@@ -16,8 +16,5 @@ int main(){
     string s="aabc";
     func("",0,s.length(),s);
 
-
-
-
    return 0;
 }

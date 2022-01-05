@@ -4,19 +4,16 @@ using namespace std;
 // Using STL
 vector<string>find_permutation(string S)
 {
-		    // Code here there
-		    vector<string> s;
-             sort(S.begin(), S.end());  
-             do
-             {
-                s.push_back(S);
-             }while(next_permutation(S.begin(),S.end()));
-             
-        return s;
+    // Code here there
+    vector<string> s;
+    sort(S.begin(), S.end());  
+    do
+    {
+        s.push_back(S);
+    }while(next_permutation(S.begin(),S.end()));
+        
+    return s;
 }
-
-
-
 
 // Without using stl
 vector<string> ans;

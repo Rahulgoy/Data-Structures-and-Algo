@@ -1,5 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
+
+// Lexicographical order is the next highest possible value after rearrangement.
+
 vector<int> nextPermutation(int N, vector<int> arr){
         
         int ind1=-1,ind2=-1;
