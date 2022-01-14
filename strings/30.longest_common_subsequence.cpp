@@ -12,7 +12,7 @@ class Solution
     //Function to find the length of longest common subsequence in two strings.
     int dp[1000][1000];
     
-    int func(int x, int y, string s1, string s2){
+    int func(int x, int y, string &s1, string &s2){ // Pass address it reduces time as in the leetcode
         if(x==-1 or y==-1) return 0;
         if(dp[x][y]!=-1) return dp[x][y];
         

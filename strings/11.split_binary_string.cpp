@@ -1,3 +1,4 @@
+// https://www.geeksforgeeks.org/split-the-binary-string-into-substrings-with-equal-number-of-0s-and-1s/
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -31,3 +32,9 @@ return 0;
 
 //Time Complexity o(N)
 // Space Complexity O(1)
+
+/* 
+Input: str = “0100110101” 
+Output: 4 
+The required substrings are “01”, “0011”, “01” and “01”.
+ */

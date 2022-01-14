@@ -13,7 +13,7 @@ void func(string t, int i, int n, string s){
 
 int main(){
 
-    string s="abaab";
+    string s="abc";
     func("",0,s.length(),s);
 
    return 0;

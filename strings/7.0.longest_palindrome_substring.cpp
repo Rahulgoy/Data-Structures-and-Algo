@@ -1,3 +1,5 @@
+// https://practice.geeksforgeeks.org/problems/longest-palindrome-in-a-string3411/1
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -9,6 +11,7 @@ string longestPalin (string S) {
     int  low,high;
     int start=0,end=1;
     for(int i=0;i<size;i++){
+        // If string is odd
         low=i;
         high=i;
         while(low>=0 && high<size && S[low]==S[high]){
@@ -19,6 +22,8 @@ string longestPalin (string S) {
             low--;
             high++;
         }
+
+        // To consider if string is even
         low=i;
         high=i+1;
         while(low>=0 && high<size && S[low]==S[high]){

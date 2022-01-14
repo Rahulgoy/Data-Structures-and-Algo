@@ -1,3 +1,4 @@
+// https://practice.geeksforgeeks.org/problems/next-permutation5226/1
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -49,3 +50,10 @@ return 0;
 
 /// Using STL  next_permutation(arr.begin(),arr.end());
 //Time O(N) space O(1)
+
+/* 
+Input: N = 6
+arr = {1, 2, 3, 6, 5, 4}
+
+Output: {1, 2, 4, 3, 5, 6}
+ */

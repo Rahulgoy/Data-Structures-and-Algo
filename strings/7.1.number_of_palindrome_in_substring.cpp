@@ -1,3 +1,5 @@
+// https://practice.geeksforgeeks.org/problems/count-palindrome-sub-strings-of-a-string0652/1#
+
 #include <cmath>
 #include <cstdio>
 #include <vector>
@@ -33,3 +35,6 @@ int main() {
 // It is different from ones in number of palindrome in subsequence
 // As subsequence and substring are different
 // Substring is of contigous characters while subsequence can be a combination of different characters of a string.
+
+//Time complexity is O(n^3) and code is not accepted on gfg
+// Find another approach

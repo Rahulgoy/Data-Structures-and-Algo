@@ -1,3 +1,4 @@
+// https://practice.geeksforgeeks.org/problems/longest-repeating-subsequence2004/1#
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -29,3 +30,40 @@ cout<<LongestRepeatingSubsequence(s)<<endl;
 
 return 0;
 }
+
+
+
+
+
+
+
+
+/* 
+The same code for LCS
+
+int dp[1001][1001];
+    int func(int x,int y, string &s, string &t){
+        if(x==-1 or y==-1) return 0;
+        
+        if(dp[x][y]!=-1) return dp[x][y];
+        else{
+            if(s[x]==t[y] and x!=y) return dp[x][y] = 1 + func(x-1,y-1,s,t);
+            else{
+                int a = func(x-1,y,s,t);
+                int b = func(x,y-1,s,t);
+                return dp[x][y] = max(a,b);
+            }
+        
+        }
+        
+    }
+    
+    int LongestRepeatingSubsequence(string str){
+        int x = str.length();
+        
+        
+        memset(dp,-1,sizeof(dp));
+        return func(x-1,x-1,str,str);
+    }
+
+ */
