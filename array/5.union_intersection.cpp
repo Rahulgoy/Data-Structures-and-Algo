@@ -18,6 +18,7 @@ int findUnion(vector<int> a, vector<int> b){
 }
 
 int findInter(vector<int> a, vector<int> b){
+    // works when there are all distinct elements in array
     int n = a.size();
     int m = b.size();
     unordered_map<int,int> mp;
