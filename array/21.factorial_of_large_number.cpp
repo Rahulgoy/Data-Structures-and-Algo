@@ -1,34 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int dp[1001]={0};
-long long fact(int n)
-{
-    if (n >= 0) 
-    {
-        dp[0] = 1;
-        for (int i = 1; i <= n; ++i) 
-        {
-            dp[i] = i * dp[i - 1];
-        }
-        return dp[n];
-    }
-    return 1;
-}
-
 vector<int> factorial(int N){
     // code here
-    long long num = fact(N);
-    cout<<num<<endl;
-    vector<int> v;
-    while(num>0){
-        int temp = num%10;
-        v.push_back(temp);
-        num = num/10;
-    }
-    reverse(v.begin(),v.end());
-    return v;
+    vector<int> res;
+    res.push_back(1);
     
+    for(int i=2;i<=N;i++){
+        int carry=0;
+        for(int j=0;j<res.size();j++){
+            int value = res[j]*i+carry;
+            res[j] = value%10;
+            carry=value/10;
+        }
+        while(carry!=0){
+            res.push_back(carry%10);
+            carry/=10;
+        }
+    }
+    reverse(res.begin(),res.end());
+    return res;
 }
 
 int main(){
@@ -36,7 +27,7 @@ int main(){
     vector<int> res;
 
     res = factorial(10);
-    cout<<fact(5)<<endl;
+   
     for(int i=0;i<res.size();i++){
         cout<<res[i];
     }

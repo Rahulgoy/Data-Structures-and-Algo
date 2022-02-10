@@ -1,39 +1,31 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int findLongestConseqSubseq(int arr[], int N)
+    int findLongestConseqSubseq(int arr[], int N)
     {
       //Your code here
-      priority_queue<int> pq;
+      set<int> hashset;
       for(int i=0;i<N;i++){
-          pq.push(arr[i]);
-      }
-    //   cout<<pq.size()<<endl;
-      int maxi=0,count=1,last_elem;
-      while(!pq.empty()){
-          int first,second;
-          first = pq.top();pq.pop();
-        //   cout<<first<<endl;
-          if(pq.empty()){
-              if(last_elem==first+1) count++;
-              maxi = max(maxi,count);
-              break;
-          }
-          
-          second = pq.top();pq.pop();
-          if(first==second+1){
-              count++;
-              maxi = max(maxi,count);
-          }else{
-              count=0;
-          }
-          last_elem=first;
-          pq.push(second);
+          hashset.insert(arr[i]);
       }
       
-      return maxi;
+      int longestStreak=0;
+      for(int i=0;i<N;i++){
+          if(!hashset.count(arr[i]-1)){
+              int currentNum = arr[i];
+              int currentStreak = 1;
+              
+              while(hashset.count(currentNum+1)){
+                  currentNum+=1;
+                  currentStreak+=1;
+                  
+              }
+              longestStreak = max(longestStreak,currentStreak);
+          }
+          
+      }
+      return longestStreak;
     }
-
 int main(){
 
     // int arr[] = {9, 2, 3, 8, 4, 7, 6};
