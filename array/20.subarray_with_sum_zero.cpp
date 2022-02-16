@@ -25,7 +25,7 @@ bool subArrayExists(int arr[], int n)
         mp[sum]++;
         for(int i=0;i<n;i++){
             sum+=arr[i];
-            if(mp[sum]>0) return true;
+            if(mp[sum]>0) return true; // concept is if same sum repeats than that means the in between sum of elements is zero.
             else mp[sum]++;
         }
         return false;
