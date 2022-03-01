@@ -29,7 +29,7 @@ int median(vector<vector<int>> &matrix, int r, int c){
             int place=0;
             
             for(int i=0;i<r;i++){    // O(r*log(c))
-                place+=upper_bound(matrix[i].begin(),matrix[i].end(),mid)-matrix[i].begin();
+                place+=upper_bound(matrix[i].begin(),matrix[i].end(),mid)-matrix[i].begin();  //number of elements smaller than mid
             }
             if(place<desired) mini = mid+1;
             else maxi=mid;
