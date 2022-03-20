@@ -2,7 +2,10 @@
 using namespace std;
 
 int solve(int n){
+
     string str;
+    
+    // Convert Integer to Binary
       while(n){
       if(n & 1) // 1
         str+='1';
@@ -11,12 +14,15 @@ int solve(int n){
       n>>=1; // Right Shift by 1 
     }   
     reverse(str.begin(),str.end());
+
+    // complement
     for(int i=0;i<str.length();i++){
         if(str[i]=='0'){
             str[i]='1';
         }else if(str[i]=='1') str[i]='0';
     }
 
+    // removing non significant bits
     int k=0;
     for(int i=0;i<str.length();i++){
         if(str[i]=='0') k=i;
@@ -26,6 +32,7 @@ int solve(int n){
 
     // cout<<str<<endl;
 
+    // converting binary back to integer
     int ans=0;
     for(int i=0;i<str.length();i++){
         if(str[i]=='1') ans=ans*2+1;
