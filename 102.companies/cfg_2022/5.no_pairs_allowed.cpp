@@ -26,7 +26,7 @@ vector<int> noPairs(vector<string> arr){
 
 int main(){
 
-    vector<string> arr={"ddooo","boook","break"};
+    vector<string> arr={"dddddddooo","boooooooook","break","ddddoooo","ddoo"};
 
     noPairs(arr);
 
