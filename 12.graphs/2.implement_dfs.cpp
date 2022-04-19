@@ -4,13 +4,13 @@ using namespace std;
 class Solution {
   public:
     // Function to return Breadth First Traversal of given graph.
-    void bfs(int src,vector<int> &v1,vector<int> adj[],int v){
-        queue<int> q;
+    void dfs(int src,vector<int> &v1,vector<int> adj[],int v){
+        stack<int> q;
         vector<int> vis(v+1);
-        q.push(0);
-        
+        q.push(src);
+        vis[src]=1;
         while(!q.empty()){
-            int node = q.front();
+            int node = q.top();
             q.pop();
             v1.push_back(node);
             for(auto x:adj[node]){
@@ -22,10 +22,10 @@ class Solution {
         }
     }
     
-    vector<int> bfsOfGraph(int V, vector<int> adj[]) {
+    vector<int> dfsOfGraph(int V, vector<int> adj[]) {
         // Code here
         vector<int> v1;
-        bfs(0,v1,adj,V);
+        dfs(2,v1,adj,V);
         return v1;
     }
 };
@@ -48,7 +48,7 @@ int main() {
         // string s1;
         // cin>>s1;
         Solution obj;
-        vector<int> ans = obj.bfsOfGraph(V, adj);
+        vector<int> ans = obj.dfsOfGraph(V, adj);
         for (int i = 0; i < ans.size(); i++) {
             cout << ans[i] << " ";
         }
@@ -57,10 +57,14 @@ int main() {
     return 0;
 } 
 
-
-/* Sample input
+/* 
+Sample Input
 1
-5 40 1
+4 6
+0 1
 0 2
-0 3
-2 4 */
+1 2
+1 3
+2 0
+3 3 
+*/
