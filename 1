@@ -1,0 +1,51 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string s="S_**___**_*_D";
+    string res="";
+    int i=1;
+    while(s[i]!='D'){
+        if(s[i]=='_' and s[i-1]=='S'){
+            res+='W';
+        }else if(s[i]=='*' and s[i-1]=='S'){
+            while(s[i]!='_'){
+                i++;
+            }
+
+            res+='J';
+        }
+
+        if(s[i]=='_'){
+            i++;
+            while(s[i]=='_'){
+                res+='W';
+                // if(i+1<s.length()-1 and s[i]!=s[i+1])
+                i++;
+            }
+            while(s[i]=='*'){
+                i++;
+                if(i+1<s.length()-1 and s[i+1]!='*') {
+                    res+='J';
+                    i++;
+
+                }
+            }
+        }
+
+    }
+    if(s[i-1]=='_') res+='W';
+    cout<<res<<endl;
+
+    return 0;
+}
